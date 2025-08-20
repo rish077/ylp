@@ -77,18 +77,18 @@ const HeroSection = () => {
             <p className="text-primary-foreground/80 text-sm mb-4">
               Trusted by individuals, families, and businesses across India
             </p>
-            <div className="flex justify-center items-center space-x-8 text-primary-foreground/60">
-              <div className="text-center">
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 text-primary-foreground/60">
+              <div className="text-center min-w-[80px]">
                 <div className="text-2xl font-bold text-primary-foreground">500+</div>
-                <div className="text-sm">Happy Clients</div>
+                <div className="text-sm whitespace-nowrap">Happy Clients</div>
               </div>
-              <div className="text-center">
+              <div className="text-center min-w-[80px]">
                 <div className="text-2xl font-bold text-primary-foreground">15+</div>
-                <div className="text-sm">Practice Areas</div>
+                <div className="text-sm whitespace-nowrap">Practice Areas</div>
               </div>
-              <div className="text-center">
+              <div className="text-center min-w-[80px]">
                 <div className="text-2xl font-bold text-primary-foreground">24/7</div>
-                <div className="text-sm">Support</div>
+                <div className="text-sm whitespace-nowrap">Support</div>
               </div>
             </div>
           </div>
