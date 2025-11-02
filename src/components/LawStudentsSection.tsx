@@ -1,5 +1,6 @@
 import { GraduationCap, BookOpen, Users, FileText, Target, Star, ArrowRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LawStudentsSection = () => {
   const services = [
@@ -40,6 +41,33 @@ const LawStudentsSection = () => {
       features: ["Mock sessions", "Feedback & tips", "Confidence building"]
     }
   ];
+
+  const isHomePage = location.pathname === "/";
+      const navigate = useNavigate();
+      const handleNavClick = (href: string) => {
+        if (href === "/") {
+          // Navigate to home page
+          navigate("/");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (isHomePage && href.startsWith("/#")) {
+          // On home page, just scroll to section
+          const sectionId = href.substring(2);
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        } else {
+          // Navigate to home and scroll to section
+          navigate(href);
+          setTimeout(() => {
+            const sectionId = href.substring(2);
+            const element = document.getElementById(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 100);
+        }
+      };
 
   return (
     <section className="py-20 bg-gradient-subtle">
@@ -86,12 +114,6 @@ const LawStudentsSection = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Learn More Link */}
-                <div className="flex items-center text-accent font-medium text-sm group-hover:text-accent-dark transition-colors">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             ))}
@@ -168,12 +190,14 @@ const LawStudentsSection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-accent hover:bg-white/90 font-semibold">
+                <Button
+                  onClick={() => handleNavClick("/#contact")}
+                 size="lg" className="bg-white text-accent hover:bg-white/90 font-semibold">
                   Start Your Journey
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                {/* <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                   Book Free Consultation
-                </Button>
+                </Button> */}
               </div>
               
               <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-accent-foreground/90 text-sm">

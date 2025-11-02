@@ -1,30 +1,68 @@
 import { useState } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ylaLogo from "@/assets/yla-logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Law for Her", href: "#law-for-her" },
-    { label: "Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/#about" },
+    { label: "Services", href: "/#services" },
+    { label: "Law for Her", href: "/#law-for-her" },
+    { label: "Team", href: "/#team" },
+    { label: "Contact", href: "/#contact" },
   ];
+
+  const handleNavClick = (href: string) => {
+    if (href === "/") {
+      // Navigate to home page
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (isHomePage && href.startsWith("/#")) {
+      // On home page, just scroll to section
+      const sectionId = href.substring(2);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home and scroll to section
+      navigate(href);
+      setTimeout(() => {
+        const sectionId = href.substring(2);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+          <div 
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => handleNavClick("/")}
+          >
+            {/* <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">YLA</span>
-            </div>
+            </div> */}
+            <img 
+              src={ylaLogo} 
+              alt="Your Legal Ally Logo" 
+              className="w-20 h-20 object-contain"
+            />
             <div>
-              <h1 className="text-xl font-bold text-primary">Your Legal Ally</h1>
+              <h1 className="text-xl font-bold text-primary">Your Legal Pal</h1>
               <p className="text-xs text-muted-foreground">Law. Simplified.</p>
             </div>
           </div>
@@ -32,23 +70,25 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
-                className="nav-link text-sm font-medium"
+                onClick={() => handleNavClick(item.href)}
+                className="nav-link text-sm font-medium cursor-pointer"
               >
                 {item.label}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            {/* <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="w-4 h-4" />
               <span>+91 9161108822</span>
-            </div>
-            <Button size="sm" className="bg-accent hover:bg-accent-dark">
+            </div> */}
+            <Button
+              onClick={() => handleNavClick("/#contact")}
+              size="sm" className="bg-accent hover:bg-accent-dark">
               Get Started
             </Button>
           </div>
@@ -67,14 +107,16 @@ const Header = () => {
           <div className="md:hidden border-t border-border bg-white/95 backdrop-blur-sm">
             <nav className="flex flex-col space-y-2 py-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.label}
-                  href={item.href}
-                  className="nav-link px-4 py-2 text-sm font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    handleNavClick(item.href);
+                    setIsMenuOpen(false);
+                  }}
+                  className="nav-link px-4 py-2 text-sm font-medium text-left cursor-pointer"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
               <div className="px-4 py-2 border-t border-border mt-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-2">

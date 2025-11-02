@@ -1,5 +1,6 @@
 import { Heart, Shield, Home, Baby, Briefcase, UserCheck, Star, Lock, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LawForHerSection = () => {
   const services = [
@@ -52,6 +53,32 @@ const LawForHerSection = () => {
       description: "Compassionate support that goes beyond legal advice to emotional understanding."
     }
   ];
+  const isHomePage = location.pathname === "/";
+  const navigate = useNavigate();
+  const handleNavClick = (href: string) => {
+    if (href === "/") {
+      // Navigate to home page
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (isHomePage && href.startsWith("/#")) {
+      // On home page, just scroll to section
+      const sectionId = href.substring(2);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home and scroll to section
+      navigate(href);
+      setTimeout(() => {
+        const sectionId = href.substring(2);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <section id="law-for-her" className="py-20 law-for-her relative overflow-hidden">
@@ -106,10 +133,10 @@ const LawForHerSection = () => {
               {whyChooseUs.map((reason, index) => (
                 <div key={index} className="text-center law-for-her-card">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <reason.icon className="w-6 h-6 text-white" />
+                    <reason.icon className="w-6 h-6 text-black" />
                   </div>
-                  <h4 className="font-bold text-white mb-2">{reason.title}</h4>
-                  <p className="text-white/80 text-sm leading-relaxed">{reason.description}</p>
+                  <h4 className="font-bold text-blue mb-2">{reason.title}</h4>
+                  <p className="text-blue/80 text-sm leading-relaxed">{reason.description}</p>
                 </div>
               ))}
             </div>
@@ -127,12 +154,14 @@ const LawForHerSection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-her-primary hover:bg-white/90 font-semibold">
+                <Button
+                 onClick={() => handleNavClick("/#contact")}
+                 size="lg" className="bg-white text-her-primary hover:bg-white/90 font-semibold">
                   Get Confidential Help Now
                 </Button>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+                {/* <Button size="lg" className="bg-white text-her-primary hover:bg-white/90 font-semibold">
                   Schedule Private Consultation
-                </Button>
+                </Button> */}
               </div>
               
               <div className="mt-8 p-4 bg-white/5 rounded-lg border border-white/10">

@@ -26,7 +26,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           {/* Main Headline */}
           <h1 className="hero-text text-4xl md:text-6xl lg:text-7xl mb-6">
-            Your Legal Ally
+            Your Legal Pal
           </h1>
           <p className="hero-text text-xl md:text-2xl mb-4 font-medium">
             Online, Affordable, and Always Within Reach
@@ -64,9 +64,11 @@ const HeroSection = () => {
               Solve Your Legal Worries
             </Button>
             <Button 
-              variant="outline" 
               size="lg" 
-              className="btn-outline-hero text-lg px-8 py-4 h-auto"
+              className="btn-hero text-lg px-8 py-4 h-auto"
+              onClick={() => {
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Learn More
             </Button>
@@ -96,11 +98,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
