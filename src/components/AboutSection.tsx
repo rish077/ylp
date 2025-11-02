@@ -20,7 +20,7 @@ const AboutSection = () => {
               Redefining Legal Help for the Modern World
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              At Your Legal Ally, we believe that legal support should be accessible, reliable, and 
+              At Your Legal Pal, we believe that legal support should be accessible, reliable, and 
               human-centered. Our mission is to bridge the gap between complex legal processes and 
               the people who need clarity, guidance, and peace of mind.
             </p>

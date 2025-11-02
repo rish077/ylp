@@ -7,7 +7,7 @@ const TeamSection = () => {
       name: "Palak Agarwal",
       title: "Senior Legal Advisor",
       specialization: "Family Law & Women's Rights",
-      experience: "8+ Years",
+      // experience: "8+ Years",
       description: "Palak specializes in family law matters with a particular focus on women's rights and child custody cases. Her empathetic approach and thorough legal knowledge have helped hundreds of families navigate complex legal situations.",
       expertise: ["Family Law", "Divorce & Custody", "Women's Rights", "Domestic Violence"],
       image: "/api/placeholder/300/300"
@@ -16,7 +16,7 @@ const TeamSection = () => {
       name: "Divyanshu Chaurasia",
       title: "Lead Corporate Counsel",
       specialization: "Business Law & IPR",
-      experience: "10+ Years",
+      // experience: "10+ Years",
       description: "Divyanshu brings extensive experience in corporate law, intellectual property, and startup legal matters. He has guided numerous entrepreneurs and businesses through complex legal frameworks and compliance requirements.",
       expertise: ["Corporate Law", "IP & Trademarks", "Startup Legal", "Contract Law"],
       image: "/api/placeholder/300/300"
@@ -25,7 +25,7 @@ const TeamSection = () => {
       name: "Shlok Jaiswal",
       title: "Consumer Rights Advocate",
       specialization: "Consumer Protection & Civil Law",
-      experience: "6+ Years",
+      // experience: "6+ Years",
       description: "Shlok is passionate about consumer rights and civil litigation. His dedication to fighting for individual rights and his expertise in property disputes have earned him recognition in the legal community.",
       expertise: ["Consumer Protection", "Property Law", "Civil Litigation", "Banking Disputes"],
       image: "/api/placeholder/300/300"
@@ -65,9 +65,9 @@ const TeamSection = () => {
                     </div>
                   </div>
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-medium">
+                    {/* <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-medium">
                       {member.experience}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

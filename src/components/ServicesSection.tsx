@@ -13,6 +13,8 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ServicesSection = () => {
   const services = [
@@ -21,86 +23,125 @@ const ServicesSection = () => {
       title: "Intellectual Property (IPR) Services",
       description: "Protect your innovations and creative works with comprehensive IP support.",
       features: ["Trademark Search Report", "IP Infringement Advisory", "Patent Filing Support"],
-      color: "accent"
+      color: "accent",
+      slug: "ipr-services"
     },
     {
       icon: Heart,
       title: "Family Law Advisory",
       description: "Compassionate legal guidance for family matters and personal relationships.",
       features: ["Divorce Guidance", "Child Custody", "Domestic Violence Support", "Settlement Agreements"],
-      color: "her-primary"
+      color: "her-primary",
+      slug: "family-law"
     },
     {
       icon: Home,
       title: "Property & Civil Dispute Support",
       description: "Expert assistance with property transactions and civil legal matters.",
       features: ["Property Dispute Consultation", "Title Check", "Sale Deeds & Lease Agreements"],
-      color: "success"
+      color: "success",
+      slug: "property-civil"
     },
     {
       icon: FileText,
       title: "Will, Succession & Inheritance Planning",
       description: "Secure your family's future with proper estate planning and documentation.",
       features: ["Drafting Wills", "Succession Planning", "Legal Heirship Certificates"],
-      color: "primary"
+      color: "primary",
+      slug: "will-succession"
     },
     {
       icon: Users,
       title: "Consumer Protection Service",
       description: "Stand up for your rights as a consumer with expert legal backing.",
       features: ["Defective Product Help", "Refund & Compensation", "Consumer Court Representation"],
-      color: "warning"
+      color: "warning",
+      slug: "consumer-protection"
     },
     {
       icon: Briefcase,
       title: "Contracts & Agreements",
       description: "Professional drafting and review of all types of legal agreements.",
       features: ["Employment Contracts", "Service Agreements", "NDAs & MoUs"],
-      color: "accent-light"
+      color: "accent-light",
+      slug: "contracts-agreements"
     },
     {
       icon: Scale,
       title: "Legal Notices & Documentation",
       description: "Professional legal notices and essential documentation services.",
       features: ["Legal Notice Drafting", "Reply to Legal Notices", "Affidavits"],
-      color: "primary"
+      color: "primary",
+      slug: "legal-notices"
     },
     {
       icon: CreditCard,
       title: "Banking & Insurance Law Advisory",
       description: "Navigate complex financial and insurance legal matters with confidence.",
       features: ["Loan Disputes", "Insurance Claim Denial", "Credit/Debit Fraud"],
-      color: "success"
+      color: "success",
+      slug: "banking-insurance"
     },
     {
       icon: GraduationCap,
       title: "Startup & Business Legal Support",
       description: "Comprehensive legal foundation for entrepreneurs and growing businesses.",
       features: ["Business Formation", "Compliance Support", "Vendor Agreements"],
-      color: "accent"
+      color: "accent",
+      slug: "startup-business"
     },
     {
       icon: Globe,
       title: "Cyber Law Advisory",
       description: "Protection and guidance for the digital age legal challenges.",
       features: ["Online Fraud", "Cyberbullying", "IT Act Advisory"],
-      color: "her-primary"
+      color: "her-primary",
+      slug: "cyber-law"
     },
     {
       icon: UserCheck,
       title: "Employment & Labour Law Advisory",
       description: "Workplace rights and employment law guidance for employees and employers.",
       features: ["Wrongful Termination", "Workplace Harassment", "Employment Contracts"],
-      color: "primary"
+      color: "primary",
+      slug: "employment-labour"
     },
     {
       icon: Users,
       title: "Alternative Dispute Resolution (ADR)",
       description: "Resolve disputes efficiently through mediation and arbitration.",
       features: ["Mediation Support", "Arbitration Clauses", "Settlement Agreements"],
-      color: "success"
+      color: "success",
+      slug: "adr-services"
     }
   ];
+
+    const isHomePage = location.pathname === "/";
+    const navigate = useNavigate();
+    const handleNavClick = (href: string) => {
+      if (href === "/") {
+        // Navigate to home page
+        navigate("/");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else if (isHomePage && href.startsWith("/#")) {
+        // On home page, just scroll to section
+        const sectionId = href.substring(2);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to home and scroll to section
+        navigate(href);
+        setTimeout(() => {
+          const sectionId = href.substring(2);
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    };
 
   const getColorClasses = (color: string) => {
     const colorMap = {
@@ -132,9 +173,10 @@ const ServicesSection = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="service-card group cursor-pointer"
+                to={`/services/${service.slug}`}
+                className="service-card group cursor-pointer block"
               >
                 {/* Icon */}
                 <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${getColorClasses(service.color)}`}>
@@ -166,7 +208,7 @@ const ServicesSection = () => {
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -181,12 +223,14 @@ const ServicesSection = () => {
                 team will provide tailored guidance just for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold">
+                <Button
+                  onClick={() => handleNavClick("/#contact")}
+                 size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold">
                   Get Custom Legal Help
                 </Button>
-                <Button variant="outline" size="lg" className="btn-outline-hero">
+                {/* <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold">
                   Schedule Consultation
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
