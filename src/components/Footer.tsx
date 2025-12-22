@@ -40,7 +40,7 @@ const Footer = () => {
                 <Scale className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Your Legal Ally</h3>
+                <h3 className="text-xl font-bold">Your Legal Pal</h3>
                 <p className="text-sm text-primary-foreground/80">Law. Simplified.</p>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Footer = () => {
             
             <div className="space-y-4 mb-6">
               <a
-                href="mailto:yourlegalally.yla@gmail.com"
+                href="mailto:yourlegalpal.ylp@gmail.com"
                 className="flex items-center space-x-3 text-primary-foreground/80 hover:text-white transition-colors duration-300 group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
@@ -115,12 +115,12 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Email Us</p>
-                  <p className="text-xs text-primary-foreground/70">yourlegalally.yla@gmail.com</p>
+                  <p className="text-xs text-primary-foreground/70">yourlegalpal.ylp@gmail.com</p>
                 </div>
               </a>
 
               <a
-                href="tel:+919161108822"
+                href="tel:+916387026454"
                 className="flex items-center space-x-3 text-primary-foreground/80 hover:text-white transition-colors duration-300 group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
@@ -128,12 +128,12 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Call Us</p>
-                  <p className="text-xs text-primary-foreground/70">+91 9161108822</p>
+                  <p className="text-xs text-primary-foreground/70">+91 6387026454</p>
                 </div>
               </a>
 
               <a
-                href="https://wa.me/919935402121"
+                href="https://wa.me/916387026454"
                 className="flex items-center space-x-3 text-primary-foreground/80 hover:text-white transition-colors duration-300 group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
@@ -141,7 +141,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium">WhatsApp</p>
-                  <p className="text-xs text-primary-foreground/70">+91 9935402121</p>
+                  <p className="text-xs text-primary-foreground/70">+91 6387026454</p>
                 </div>
               </a>
             </div>
@@ -165,7 +165,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-sm text-primary-foreground/80">
-              © {currentYear} Your Legal Ally. All rights reserved.
+              © {currentYear} Your Legal Pal. All rights reserved.
             </div>
 
             {/* Legal Links */}

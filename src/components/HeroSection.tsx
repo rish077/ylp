@@ -81,7 +81,7 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 text-primary-foreground/60">
               <div className="text-center min-w-[80px]">
-                <div className="text-2xl font-bold text-primary-foreground">500+</div>
+                <div className="text-2xl font-bold text-primary-foreground">100+</div>
                 <div className="text-sm whitespace-nowrap">Happy Clients</div>
               </div>
               <div className="text-center min-w-[80px]">

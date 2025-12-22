@@ -68,8 +68,10 @@ const LawStudentsSection = () => {
           }, 100);
         }
       };
+          
 
   return (
+    <section id="law-student" className="py-20 law-for-her relative overflow-hidden">
     <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
@@ -119,7 +121,7 @@ const LawStudentsSection = () => {
             ))}
           </div>
 
-          {/* Success Stories & Statistics */}
+          Success Stories & Statistics
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Success Statistics */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -145,7 +147,7 @@ const LawStudentsSection = () => {
                   <div className="text-muted-foreground text-sm">Top Law Schools</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow-sm border border-border">
-                  <div className="text-3xl font-bold text-primary mb-1">4.8/5</div>
+                  <div className="text-3xl font-bold text-primary mb-1">4.5/5</div>
                   <div className="text-muted-foreground text-sm">Student Rating</div>
                 </div>
               </div>
@@ -159,7 +161,7 @@ const LawStudentsSection = () => {
                 </div>
                 
                 <blockquote className="text-muted-foreground italic text-lg leading-relaxed mb-6">
-                  "The CLAT mentorship program at Your Legal Ally was a game-changer for me. 
+                  "The CLAT mentorship program at Your Legal Pal was a game-changer for me. 
                   The personalized study plan, regular doubt sessions, and mock tests helped me 
                   secure admission to my dream law school. The mentors are not just experts, 
                   but genuine guides who care about your success."
@@ -170,8 +172,8 @@ const LawStudentsSection = () => {
                     <GraduationCap className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <div className="font-semibold text-primary">Priya Sharma</div>
-                    <div className="text-sm text-muted-foreground">NLSIU Bangalore, Class of 2024</div>
+                    <div className="font-semibold text-primary">Divyanshu Chaurasia</div>
+                    <div className="text-sm text-muted-foreground">NLU Lucknow, Class of 2025</div>
                   </div>
                 </div>
               </div>
@@ -218,6 +220,7 @@ const LawStudentsSection = () => {
           </div>
         </div>
       </div>
+    </section>
     </section>
   );
 };

@@ -27,6 +27,30 @@ const ServicesSection = () => {
       slug: "ipr-services"
     },
     {
+      icon: Briefcase,
+      title: "Contracts & Agreements",
+      description: "Professional drafting and review of all types of legal agreements.",
+      features: ["Employment Contracts", "Service Agreements", "NDAs & MoUs"],
+      color: "accent-light",
+      slug: "contracts-agreements"
+    },
+    {
+      icon: Scale,
+      title: "Legal Notices & Documentation",
+      description: "Professional legal notices and essential documentation services.",
+      features: ["Legal Notice Drafting", "Reply to Legal Notices", "Affidavits"],
+      color: "primary",
+      slug: "legal-notices"
+    },
+    {
+      icon: GraduationCap,
+      title: "Startup & Business Legal Support",
+      description: "Comprehensive legal foundation for entrepreneurs and growing businesses.",
+      features: ["Business Formation", "Compliance Support", "Vendor Agreements"],
+      color: "accent",
+      slug: "startup-business"
+    },
+    {
       icon: Heart,
       title: "Family Law Advisory",
       description: "Compassionate legal guidance for family matters and personal relationships.",
@@ -59,36 +83,12 @@ const ServicesSection = () => {
       slug: "consumer-protection"
     },
     {
-      icon: Briefcase,
-      title: "Contracts & Agreements",
-      description: "Professional drafting and review of all types of legal agreements.",
-      features: ["Employment Contracts", "Service Agreements", "NDAs & MoUs"],
-      color: "accent-light",
-      slug: "contracts-agreements"
-    },
-    {
-      icon: Scale,
-      title: "Legal Notices & Documentation",
-      description: "Professional legal notices and essential documentation services.",
-      features: ["Legal Notice Drafting", "Reply to Legal Notices", "Affidavits"],
-      color: "primary",
-      slug: "legal-notices"
-    },
-    {
       icon: CreditCard,
       title: "Banking & Insurance Law Advisory",
       description: "Navigate complex financial and insurance legal matters with confidence.",
       features: ["Loan Disputes", "Insurance Claim Denial", "Credit/Debit Fraud"],
       color: "success",
       slug: "banking-insurance"
-    },
-    {
-      icon: GraduationCap,
-      title: "Startup & Business Legal Support",
-      description: "Comprehensive legal foundation for entrepreneurs and growing businesses.",
-      features: ["Business Formation", "Compliance Support", "Vendor Agreements"],
-      color: "accent",
-      slug: "startup-business"
     },
     {
       icon: Globe,

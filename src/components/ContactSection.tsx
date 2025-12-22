@@ -1,10 +1,30 @@
 import { useState } from "react";
-import { Mail, Phone, MessageCircle, MapPin, Clock, Shield, Send } from "lucide-react";
+import { Mail, Phone, MessageCircle, MapPin, Clock, Shield, Send, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import React from "react";
+
+
+// Inline Instagram SVG (simple, uses currentColor)
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <circle cx="17.5" cy="6.5" r="0.5" />
+  </svg>
+);
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +39,7 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch("https://formspree.io/f/mldopyjq", {
+      const response = await fetch("https://formspree.io/f/xwveqnwn", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -60,23 +80,30 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "yourlegalally.yla@gmail.com",
-      action: "mailto:yourlegalally.yla@gmail.com",
+      value: "yourlegalpal.ylp@gmail.com",
+      action: "mailto:yourlegalpal.ylp@gmail.com",
       color: "accent"
     },
     {
       icon: Phone,
       title: "Call Us",
-      value: "+91 9161108822",
-      action: "tel:+919161108822",
+      value: "+91 6387026454",
+      action: "tel:+916387026454",
       color: "success"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      value: "+91 9935402121",
-      action: "https://wa.me/919935402121",
+      value: "+91 6387026454",
+      action: "https://wa.me/916387026454",
       color: "her-primary"
+    },
+    {
+      icon: InstagramIcon,
+      title: "Instagram",
+      value: "@yourlegalpal",
+      action: "https://www.instagram.com/your.legal.pal?igsh=N3RqaG10bjVkYTcy",
+      color: "accent"
     }
   ];
 

@@ -587,20 +587,20 @@ const ServiceDetail = () => {
                 className="bg-white text-primary hover:bg-white/90 font-semibold"
                 asChild
               >
-                <a href="tel:+919161108822">
+                <a href="tel:+916387026454">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </a>
               </Button>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-primary-foreground/90">
-              <a href="tel:+919161108822" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <a href="tel:+916387026454" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
                 <Phone className="w-5 h-5" />
-                +91 9161108822
+                +91 6387026454
               </a>
-              <a href="mailto:yourlegalally.yla@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <a href="mailto:yourlegalpal.ylp@gmail.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
                 <Mail className="w-5 h-5" />
-                yourlegalally.yla@gmail.com
+                yourlegalpal.ylp@gmail.com
               </a>
             </div>
           </div>

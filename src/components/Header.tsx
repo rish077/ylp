@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ylaLogo from "@/assets/yla-logo.jpg";
+import ylpLogo from "@/assets/ylp logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +15,7 @@ const Header = () => {
     { label: "About", href: "/#about" },
     { label: "Services", href: "/#services" },
     { label: "Law for Her", href: "/#law-for-her" },
+    { label: "Student Corner", href: "/#law-student" },
     { label: "Team", href: "/#team" },
     { label: "Contact", href: "/#contact" },
   ];
@@ -57,8 +58,8 @@ const Header = () => {
               <span className="text-white font-bold text-lg">YLA</span>
             </div> */}
             <img 
-              src={ylaLogo} 
-              alt="Your Legal Ally Logo" 
+              src={ylpLogo} 
+              alt="Your Legal Pal Logo" 
               className="w-20 h-20 object-contain"
             />
             <div>
@@ -121,11 +122,11 @@ const Header = () => {
               <div className="px-4 py-2 border-t border-border mt-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91 9161108822</span>
+                  <span>+91 6387026454</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-3">
                   <Mail className="w-4 h-4" />
-                  <span>yourlegalally.yla@gmail.com</span>
+                  <span>yourlegalpal.ylp@gmail.com</span>
                 </div>
                 <Button size="sm" className="w-full bg-accent hover:bg-accent-dark">
                   Get Started

@@ -81,13 +81,13 @@ const AboutSection = () => {
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="bg-white rounded-2xl shadow-lg p-8 border border-border">
                 <h3 className="text-2xl font-bold text-primary mb-6 text-center">
-                  Trusted by Thousands
+                  Your Trusted Legal Partners
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-accent mb-1">1000+</div>
-                    <div className="text-muted-foreground text-sm">Cases Resolved</div>
+                    <div className="text-3xl font-bold text-accent mb-1">100+</div>
+                    <div className="text-muted-foreground text-sm">Consultancy</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-success mb-1">98%</div>

@@ -59,7 +59,7 @@ const WhyChooseUsSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Why Choose Your Legal Ally?
+              Why Choose Your Legal Pal?
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               We're not just another legal service. We're your partners in navigating life's legal challenges 
@@ -100,7 +100,7 @@ const WhyChooseUsSection = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary-foreground mb-2">4.9/5</div>
+                  <div className="text-4xl font-bold text-primary-foreground mb-2">4.5/5</div>
                   <div className="text-primary-foreground/90 text-sm">Client Rating</div>
                   <div className="flex justify-center mt-2">
                     {[...Array(5)].map((_, i) => (
@@ -110,7 +110,7 @@ const WhyChooseUsSection = () => {
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary-foreground mb-2">1000+</div>
+                  <div className="text-4xl font-bold text-primary-foreground mb-2">100+</div>
                   <div className="text-primary-foreground/90 text-sm">Happy Clients</div>
                   <div className="mt-2 text-primary-foreground/80 text-xs">Across all practice areas</div>
                 </div>
@@ -123,7 +123,7 @@ const WhyChooseUsSection = () => {
               </div>
 
               <blockquote className="text-primary-foreground/90 text-lg italic max-w-3xl mx-auto mb-8">
-                "Your Legal Ally transformed what seemed like an impossible legal situation into a clear, 
+                "Your Legal Pal transformed what seemed like an impossible legal situation into a clear, 
                 manageable process. Their expertise, empathy, and transparent approach gave me the confidence 
                 I needed during a very difficult time."
               </blockquote>
