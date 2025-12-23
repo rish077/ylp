@@ -172,7 +172,7 @@ const LawStudentsSection = () => {
                     <GraduationCap className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <div className="font-semibold text-primary">Divyanshu Chaurasia</div>
+                    <div className="font-semibold text-primary">Abhishek Kumar</div>
                     <div className="text-sm text-muted-foreground">NLU Lucknow, Class of 2025</div>
                   </div>
                 </div>

@@ -79,6 +79,7 @@ const LawForHerSection = () => {
       }, 100);
     }
   };
+   
 
   return (
     <section id="law-for-her" className="py-20 law-for-her relative overflow-hidden">

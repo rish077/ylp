@@ -1,15 +1,22 @@
 import { Scale, Mail, Phone, MapPin, Heart, Shield, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const onQuickLink = (id: string) => {
+    // navigate to home with hash so Home can detect and scroll
+    navigate(`/#${id}`);
+  };
+
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Law for Her", href: "#law-for-her" },
-    { label: "Our Team", href: "#team" },
-    { label: "Contact", href: "#contact" }
+    { label: "Home", href: "/" },
+    { label: "About", href: "/#about" },
+    { label: "Services", href: "/#services" },
+    { label: "Law for Her", href: "/#law-for-her" },
+    { label: "Our Team", href: "/#team" },
+    { label: "Contact", href: "/#contact" }
   ];
 
   const services = [

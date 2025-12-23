@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ylpLogo from "@/assets/ylp logo.jpg";
+import ylpLogo from "@/assets/ylp.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,11 +57,18 @@ const Header = () => {
             {/* <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">YLA</span>
             </div> */}
-            <img 
+            {/* <img 
               src={ylpLogo} 
               alt="Your Legal Pal Logo" 
               className="w-20 h-20 object-contain"
-            />
+            /> */}
+            <div className="w-20 h-18 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
+              <img
+                src={ylpLogo}
+                alt="Your Legal Pal Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div>
               <h1 className="text-xl font-bold text-primary">Your Legal Pal</h1>
               <p className="text-xs text-muted-foreground">Law. Simplified.</p>
