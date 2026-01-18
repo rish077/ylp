@@ -1,6 +1,7 @@
 import { Mail, Phone, Award, GraduationCap, Scale } from "lucide-react";
 import palakImg from "@/assets/palak ag photo.jpeg";
 import divyanshuImg from "@/assets/dc pic.jpeg";
+import shlokImg from "@/assets/shlok photo.jpeg";
 import { Button } from "@/components/ui/button";
 
 const TeamSection = () => {
@@ -35,16 +36,21 @@ const TeamSection = () => {
       ),
       // expertise: ["Corporate Law", "IP & Trademarks", "Startup Legal", "Contract Law"],
       image: divyanshuImg
+    },
+    {
+      name: "Shlok Jaiswal",
+      title: "Member",
+      specialization: "B.B.A. LL.B, Bharati Vidyapeeth New Law College, Pune",
+      // experience: "6+ Years",
+      description: (
+        <>
+          Advocate Shlok Jaiswal brings a balanced blend of legal knowledge and business acumen to his legal practice. With a strong foundation in corporate and commercial law, his areas of focus include{' '} 
+          <strong>Corporate & Business Law</strong>, <strong>Contract Law</strong>, <strong>Commercial Transactions</strong>, and <strong>Regulatory Compliance</strong>. He is known for his practical, solution-oriented approach, assisting clients in navigating legal complexities with clarity and strategic insight.
+        </>
+      ),
+      // expertise: ["Consumer Protection", "Property Law", "Civil Litigation", "Banking Disputes"],
+      image: shlokImg
     }
-    // {
-    //   // name: "Shlok Jaiswal",
-    //   // title: "Consumer Rights Advocate",
-    //   // specialization: "Consumer Protection & Civil Law",
-    //   // // experience: "6+ Years",
-    //   // description: "Shlok is passionate about consumer rights and civil litigation. His dedication to fighting for individual rights and his expertise in property disputes have earned him recognition in the legal community.",
-    //   // expertise: ["Consumer Protection", "Property Law", "Civil Litigation", "Banking Disputes"],
-    //   // image: "/api/placeholder/300/300"
-    // }
   ];
 
   return (
@@ -67,7 +73,7 @@ const TeamSection = () => {
           </div>
 
           {/* Team Members */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 stagger-animation">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 stagger-animation">
             {teamMembers.map((member, index) => (
               <div key={index} className="service-card text-center group">
                 {/* Profile Image */}
@@ -147,7 +153,7 @@ const TeamSection = () => {
                   </div>
                   <h4 className="font-bold text-primary mb-2">Proven Track Record</h4>
                   <p className="text-muted-foreground text-sm">
-                    Combined 20+ years of experience with successful case resolutions across all practice areas.
+                    Combined years of experience with successful case resolutions across all practice areas.
                   </p>
                 </div>
                 
