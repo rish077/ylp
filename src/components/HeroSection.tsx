@@ -23,9 +23,9 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+        <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
           {/* Main Headline */}
-          <h1 className="hero-text text-3xl md:text-4xl lg:text-5xl mb-4">
+          <h1 className="hero-text text-3xl md:text-3xl font-large mb-4">
             Your Legal Pal
           </h1>
           <p className="hero-text text-xl md:text-2xl mb-4 font-medium">
