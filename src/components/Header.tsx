@@ -62,7 +62,7 @@ const Header = () => {
               alt="Your Legal Pal Logo" 
               className="w-20 h-20 object-contain"
             /> */}
-            <div className="w-20 h-18 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
+            <div className="w-17 h-16 rounded-full overflow-hidden bg-transparent flex items-center justify-center">
               <img
                 src={ylpLogo}
                 alt="Your Legal Pal Logo"
